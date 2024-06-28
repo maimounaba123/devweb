@@ -1,0 +1,209 @@
+/* body {
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column; 
+    overflow: hidden; 
+} */
+
+
+.acolor{
+    color: FD6601;
+  }
+  
+    
+  /* Variables */
+  :root {
+    --color-base: #fff;
+    --color-text: #222;
+    --color-accent: #FD6601;
+  }
+  
+  /* Reset */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Body */
+  body {
+    background-color: var(white);
+    color: var(--color-text);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  /* Navigation */
+  #navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--color-text);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 100%;
+    text-decoration: none;
+    color: var(--color-base);
+  }
+  
+  .links {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  .links li {
+    margin-left: 20px;
+  }
+  
+  .links li a {
+    text-decoration: none;
+    color: var(--color-base);
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .links li a:hover {
+    background-color: var(--color-accent);
+    color: var(--color-base);
+  }
+  
+  /* Dropdown */
+  .drop {
+    display: none;
+    position: absolute;
+    background-color: var(--color-base);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown:hover .drop {
+    display: block;
+  }
+  
+  .drop li a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .drop li a:hover {
+    background-color: var(--color-accent);
+    color: var(--color-base);
+  }
+  
+  /* Arrow */
+  .arrow {
+    position: relative;
+    top: 3px;
+    margin-left: 5px;
+    border: solid var(--color-text);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+  }
+
+.title-container {
+    background-color: #ff8000;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    margin-top: 1%;
+    text-align: center;
+   margin-left: 37%;
+    height: 5%;
+    width: 30%;
+}
+
+.title-container h3 {
+    margin: 0;
+    
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 85%;
+    height: 75%;
+    margin-left: 10%;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.left-section, .right-section {
+    width: 45%;
+}
+
+.left-section label,
+.right-section label {
+    margin-top: 15px;
+    display: block;
+}
+
+input, select {
+    margin-top: 15px; 
+    padding: 15px;
+    border: none;
+    background-color: rgb(246, 244, 244);
+    border-radius: 5px;
+    width: calc(100% - 24px);
+    font-size: 15px; 
+}
+
+
+
+
+input[type="date"], input[type="time"] {
+    color: #000;
+}
+
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 3%;
+    width: 100%;
+    padding: 0 15%;
+    box-sizing: border-box;
+}
+
+.btn {
+    padding: 10px 25px; 
+    border: none;
+    border-radius: 15px;
+    width: 30%; 
+    cursor: pointer;
+    height: 20%;
+    font-size: 16px; 
+    text-align: center; 
+}
+
+.btn.cancel {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000;
+}
+
+.btn.confirm {
+    background-color: #050505;
+    color: #fff;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}

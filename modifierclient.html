@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modifier Client</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="title-container">
+        <h3>Modifier les informations du client</h3>
+    </div>
+  <div class="container">
+    <form id="modifyForm" action="modif.php" method="POST">
+      <label for="nom">Nom:</label><br>
+      <input type="text" id="nom" name="nom" required><br>
+      <label for="prenom">Prénom:</label><br>
+      <input type="text" id="prenom" name="prenom" required><br>
+      <label for="adresse">Adresse:</label><br>
+      <input type="text" id="adresse" name="adresse" required><br>
+      <label for="departement">Département:</label><br>
+      <input type="text" id="departement" name="departement" required><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br>
+      <label for="telephone">Téléphone:</label><br>
+      <input type="tel" id="telephone" name="telephone" required><br>
+      <label for="username">Nom d'utilisateur:</label><br>
+      <input type="text" id="username" name="username" required><br><br>
+
+      <div class="button-container">
+        <button onclick="goBack()">Modifier</button>
+    </div>
+    <script>
+        function goBack() {
+            window.location.href = './listesdesclients.html';
+        }
+    </script>
+    </form>
+  </div>
+</body>
+</html>

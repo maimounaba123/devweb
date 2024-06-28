@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Rendez-vous</title>
+    <link rel="stylesheet" href="./modifier_rv.css">
+</head>
+<body>
+    <nav id="navigation">
+        <a href="../acceuil/acceuil.html" class="logo"><img src="img/Vector.png" style="width: 20%;height: 25%;">  Service<b>Car</b>Link</a>
+        <ul class="links">
+            <li><a href="./listesdes_rv.html">Liste des rendez-vous</a></li>
+            <li><a href="./listesdesclients.html">Liste des clients</a> </li>
+          
+          <li class="dropdown"><a href="../profil/profil.php" class="trigger-drop">Profil<i class="arrow"></i></a>
+            <ul class="drop">
+              <li><a href="../profil/profil.php">Informations personnelles</a></li>
+              <li><a href="#">se Deconnecter</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    <div class="title-container">
+        <h3>Mise a jour d'un rendez-vous</h3>
+    </div>
+    <div class="form-container">
+        <form id="appointmentForm" action="process_appointment1.php" method="post">
+            <div class="left-section">
+                <label for="matricule">Matricule:</label>
+                <input type="text" id="matricule" name="matricule" required>
+                <label for="model">Modèle:</label>
+                <input type="text" id="model" name="model" required>
+
+                <label for="brand">Marque:</label>
+                <input type="text" id="brand" name="brand" required>
+
+                <label for="vehicleType">Type de véhicule:</label>
+                <select id="vehicleType" name="vehicleType" required onchange="toggleSubtypeOptions()">
+                    <option value="">Sélectionnez le type</option>
+                    <option value="moto">Moto</option>
+                    <option value="voiture">Voiture</option>
+                </select>
+
+                <div id="subtypeZone">
+                    <label for="vehicleSubtype">Sous-type de véhicule:</label>
+                    <select id="vehicleSubtype" name="vehicleSubtype" required>
+                        <option value="">Sélectionnez le sous-type</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="right-section">
+                <label for="motif">Motif du rendez-vous:</label>
+                <select id="motif" name="motif" required>
+                    <option value="">Sélectionnez le motif</option>
+                    <option value="entretien">Entretien</option>
+                    <option value="reparation">Réparation</option>
+                    <option value="controle">Contrôle technique</option>
+                    <option value="vidange">Climatisation</option>
+                    <option value="car">Car Diagnostic</option>
+                    <option value="peinture">Peinture</option>
+                    <option value="carosserie">Carosserie</option>
+                    <option value="batterie">Batterie</option>
+                    <option value="freinage">Freinage</option>
+                    <option value="phares">Phares</option>
+                    <option value="echappement">Echappement</option>
+                    <option value="pneumatiques">Pneumatiques</option>
+                    <option value="amortisseurs">Amortisseurs</option>
+                   
+                </select>
+
+                <label for="date">Date du rendez-vous:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Heure du rendez-vous:</label>
+                <input type="time" id="time" name="time" required>
+
+                <label for="color">Couleur de la voiture:</label>
+                <input type="text" id="color" name="color" required>
+                <div class="buttons-container">
+                    <button type="submit" class="btn cancel">Annuler</button>
+                    <button type="submit" class="btn confirm">Modifier</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function toggleSubtypeOptions() {
+            var vehicleType = document.getElementById("vehicleType").value;
+            var subtypeZone = document.getElementById("subtypeZone");
+            var vehicleSubtypeSelect = document.getElementById("vehicleSubtype");
+            
+            while (vehicleSubtypeSelect.options.length > 0) {
+                vehicleSubtypeSelect.remove(0);
+            }
+            
+            if (vehicleType === "moto") {
+               
+                var options = [" ","Deux roues", "Trois roues"];
+                for (var i = 0; i < options.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = options[i];
+                    vehicleSubtypeSelect.add(option);
+                }
+            }
+            
+            else if (vehicleType === "voiture") {
+                
+                var options = [" ","4x4", "Berline", "Coupé", "SUV", "Utilitaire"];
+                for (var i = 0; i < options.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = options[i];
+                    vehicleSubtypeSelect.add(option);
+                }
+            }
+           
+            else {
+                
+                var option = document.createElement("option");
+                option.text = "Sélectionnez le sous-type";
+                vehicleSubtypeSelect.add(option);
+            }
+        }
+    </script>
+</body>
+</html>

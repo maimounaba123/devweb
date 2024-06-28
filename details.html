@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fiche de Renseignement</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMe59bzK4K6hKE/Ttrzp5q5mjcr13pmiTc5mdcd" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="./details.css" />
+</head>
+<body>
+    <div class="title-container">
+        <h3>Fiche de Renseignement</h3>
+    </div>
+
+    <div class="info-container">
+        <!-- backend -->
+    </div>
+
+    <div class="button-container">
+        <button onclick="goBack()">Retour</button>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+            const clientId = params.get("clientId");
+
+            // Simulated data, in a real application this would come from a server
+            const clients = {
+                "1": {
+                    nom: "Dupont",
+                    prenom: "Jean",
+                    email: "jean.dupont@example.com",
+                    modele: "Toyota Corolla",
+                    marque: "Toyota",
+                    motif: "Réparation",
+                    garagiste: "Tony",
+                    description: "Problemes de pneus",
+                    date: "2024-06-30",
+                    etat: "Terminé"
+                },
+                "2": {
+                    nom: " Curie",
+                    prenom: "Marie",
+                    email: "marie.curie@example.com",
+                    modele: "Renault Clio",
+                    marque: "Renault",
+                    motif: "Entretien",
+                    garagiste: "John",
+                    description: "Problemes de batterie",
+                    date: "2024-07-01",
+                    etat: "En cours"
+                }
+            };
+
+            const client = clients[clientId];
+            if (client) {
+                document.querySelector('.info-container').innerHTML = `
+                    <p><strong>Nom:</strong> ${client.nom}</p>
+                    <p><strong>Email:</strong> ${client.email}</p>
+                    <p><strong>Modèle:</strong> ${client.modele}</p>
+                    <p><strong>Marque:</strong> ${client.marque}</p>
+                    <p><strong>Motif du rendez-vous:</strong> ${client.motif}</p>
+                    <p><strong>Garagiste:</strong> ${client.garagiste}</p>
+                    <p><strong>Description</strong> ${client.description}</p>
+                    <p><strong>Etat du rendez-vous:</strong> ${client.etat}</p>
+                `;
+            } else {
+                document.querySelector('.info-container').innerHTML = '<p>Aucune information disponible pour ce client.</p>';
+            }
+        });
+
+        function goBack() {
+            window.location.href = './listesdes_rv.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+/* Add your styles here */
+/* Example styling for container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+  
+/* Example styling for form inputs */
+form {
+    margin-top: 20px;
+}
+  
+label {
+    font-weight: bold;
+    margin-bottom: 5px; /* Ajout d'espace en bas de chaque label */
+}
+  
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px; /* Ajout d'espace en bas de chaque champ input */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+button {
+    padding: 15px 30px; /* Augmenter la taille du bouton */
+    background-color: #FD6601;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none; /* Supprimer le surlignage */
+    transition: background-color 0.3s ease;
+}
+  
+button:hover {
+    background-color: #FF9C3C;
+}
+
+.title-container {
+    background-color: #ff8000;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    margin-top: 4%;
+    text-align: center;
+    margin-left: 37%;
+    height: 20%;
+    width: 30%;
+}
+
+.title-container h3 {
+    margin: 0;
+}
+
+.button-container {
+    margin-top: 20px;
+    text-align: center; /* Centrer le bouton */
+}
+
+.button-container button {
+    padding: 15px 30px; /* Augmenter la taille du bouton */
+    font-size: 16px;
+    background-color: #FD6601;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none; /* Supprimer le surlignage */
+    transition: background-color 0.3s ease;
+    width: 100%; /* Bouton prend toute la largeur du conteneur */
+    max-width: 200px; /* Limite la largeur maximale du bouton */
+}
+
+.button-container button:hover {
+    background-color: #FF9C3C;
+}
